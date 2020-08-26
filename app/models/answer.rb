@@ -4,6 +4,8 @@ class Answer < ApplicationRecord
     validates :age, presence: true
     validates :country_code, presence: true
 
+    self.per_page = 10
+
     def country_name
         country = ISO3166::Country[country_code]
         country.translations[I18n.locale.to_s] || country.name
