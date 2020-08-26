@@ -9,15 +9,22 @@ class AnswersController < ApplicationController
             render 'index'
             return
         end
-        redirect_to answers_summary_path # add notification that the answer has been submitted
+        redirect_to answers_summary_path
     end
 
     def summary
-        @answers = Answer.all
+        @all_answer_1 = ""
+        @all_answer_2 = ""
+        @answers = Answer.page(params[:page]).order('created_at DESC')
+
+        @answers.each do |answer|
+            @all_answer_1 += answer.answer_1 + " "
+            @all_answer_2 += answer.answer_2 + " "
+        end
     end
 
     def destroy
-        @answer = answer.find(params[:id])
+        @answer = Answer.find(params[:id])
         @answer.destroy
 
         redirect_to answers_summary_path

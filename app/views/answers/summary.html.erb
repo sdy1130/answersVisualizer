@@ -1,41 +1,104 @@
-<h1>Hello, Rails!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h1>Question 1 WordCloud</h1><br>
+      <img id="wordCloud_1" />
+      <% @answers.each do |answer| %>
+        <div class="card d-inline-block" style="width: 45%;">
+          <div class="card-body">
+            <p class="card-text"> <%= answer.answer_1 %> </p>
+            <h6 class="card-subtitle mb-2 text-muted"><%= answer.age%> / <%= answer.country_name %></h6>
+            <% if user_signed_in? %>
+              <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <h1>Question 2 WordCloud</h1><br>
+      <img id="wordCloud_2" />
+      <% @answers.each do |answer| %>
+        <div class="card d-inline-block" style="width: 45%;">
+          <div class="card-body">
+            <p class="card-text"> <%= answer.answer_2 %> </p>
+            <h6 class="card-subtitle mb-2 text-muted"><%= answer.age%> / <%= answer.country_name %></h6>
+            <% if user_signed_in? %>
+              <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= will_paginate @answers %>
+  </div>
+</div>
 
-<html>
-  <body>
-    <img id="wordCloud" />
-  </body>
-  <script>
-    fetch("https://textvis-word-cloud-v1.p.rapidapi.com/v1/textToCloud", {
-      method: "POST",
-      headers: {
-        "x-rapidapi-host": "textvis-word-cloud-v1.p.rapidapi.com",
-        "x-rapidapi-key": "88e342cc0bmsh3054f62a586d151p132d3fjsn51ec7f3448ac",
-        "content-type": "application/json",
-        accept: "application/json"
-      },
-      body: JSON.stringify({
-        text: <%= @all_answer_1 %>
-        scale: 1,
-        width: 800,
-        height: 800,
-        colors: ["#375E97", "#FB6542", "#FFBB00", "#3F681C"],
-        font: "Tahoma",
-        use_stopwords: true,
-        language: "en",
-        uppercase: false
-      })
-    })
-      .then(response => {
-        return response.text();
-      })
-      .then(wordCloud => {
-        var img = document.getElementById("wordCloud");
-        img.src = wordCloud;
-        img.height = 800;
-        img.width = 800;
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  </script>
-</html>
+<script>
+ fetch("https://textvis-word-cloud-v1.p.rapidapi.com/v1/textToCloud", {
+   method: "POST",
+   headers: {
+     "x-rapidapi-host": "textvis-word-cloud-v1.p.rapidapi.com",
+     "x-rapidapi-key": "88e342cc0bmsh3054f62a586d151p132d3fjsn51ec7f3448ac",
+     "content-type": "application/json",
+     accept: "application/json"
+   },
+   body: JSON.stringify({
+     text: "<%= @all_answer_1 %>",
+     scale: 1,
+     width: 400,
+     height: 400,
+     colors: ["#375E97", "#FB6542", "#FFBB00", "#3F681C"],
+     font: "Tahoma",
+     use_stopwords: true,
+     language: "en",
+     uppercase: false
+   })
+ })
+   .then(response => {
+     return response.text();
+   })
+   .then(wordCloud => {
+     var img = document.getElementById("wordCloud_1");
+     img.src = wordCloud;
+     img.height = 400;
+     img.width = 400;
+   })
+   .catch(err => {
+     console.log(err);
+   });
+</script>
+<script>
+ fetch("https://textvis-word-cloud-v1.p.rapidapi.com/v1/textToCloud", {
+   method: "POST",
+   headers: {
+     "x-rapidapi-host": "textvis-word-cloud-v1.p.rapidapi.com",
+     "x-rapidapi-key": "88e342cc0bmsh3054f62a586d151p132d3fjsn51ec7f3448ac",
+     "content-type": "application/json",
+     accept: "application/json"
+   },
+   body: JSON.stringify({
+     text: "<%= @all_answer_2 %>",
+     scale: 1,
+     width: 400,
+     height: 400,
+     colors: ["#375E97", "#FB6542", "#FFBB00", "#3F681C"],
+     font: "Tahoma",
+     use_stopwords: true,
+     language: "en",
+     uppercase: false
+   })
+ })
+   .then(response => {
+     return response.text();
+   })
+   .then(wordCloud => {
+     var img = document.getElementById("wordCloud_2");
+     img.src = wordCloud;
+     img.height = 400;
+     img.width = 400;
+   })
+   .catch(err => {
+     console.log(err);
+   });
+</script>
