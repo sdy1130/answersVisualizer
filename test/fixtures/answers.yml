@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  answer_1: MyText
+  answer_2: MyText
+  age: 1
+  country_code: MyString
+
+two:
+  answer_1: MyText
+  answer_2: MyText
+  age: 1
+  country_code: MyString

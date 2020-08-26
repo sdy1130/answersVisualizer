@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get "welcome/index"
+  get 'answers/summary'
+  devise_for :users
   root "answers#index"
+  resources :answers
 end

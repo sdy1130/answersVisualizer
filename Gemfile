@@ -60,3 +60,4 @@ gem 'popper_js'
 gem 'bootstrap-sass'
 gem 'mini_magick', '~> 4.8'
 gem "standard", group: [:development, :test]
+gem 'country_select'
