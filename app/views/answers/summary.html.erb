@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-6">
-      <h1>Question 1 WordCloud</h1><br>
+      <h1>What are your fears about end-of-life?</h1><br>
       <img id="wordCloud_1" />
       <% @answers.each do |answer| %>
         <div class="card d-inline-block" style="width: 45%;">
           <div class="card-body">
             <p class="card-text"> <%= answer.answer_1 %> </p>
-            <h6 class="card-subtitle mb-2 text-muted"><%= answer.age%> / <%= answer.country_name %></h6>
+            <h6 class="card-subtitle mb-2 text-muted float-right" style="font-size: 13px"><%= answer.age%> / <%= answer.country_name %></h6>
             <% if user_signed_in? %>
               <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
             <% end %>
@@ -16,13 +16,13 @@
       <% end %>
     </div>
     <div class="col-sm-12 col-md-6">
-      <h1>Question 2 WordCloud</h1><br>
+      <h1>What legacy are you hoping to leave behind?</h1><br>
       <img id="wordCloud_2" />
       <% @answers.each do |answer| %>
         <div class="card d-inline-block" style="width: 45%;">
           <div class="card-body">
             <p class="card-text"> <%= answer.answer_2 %> </p>
-            <h6 class="card-subtitle mb-2 text-muted"><%= answer.age%> / <%= answer.country_name %></h6>
+            <h6 class="card-subtitle mb-2 text-muted float-right" style="font-size: 13px"><%= answer.age%> / <%= answer.country_name %></h6>
             <% if user_signed_in? %>
               <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
             <% end %>
@@ -30,7 +30,7 @@
         </div>
       <% end %>
     </div>
-    <%= will_paginate @answers %>
+    <div class="d-flex justify-content-center"><%= will_paginate @answers %></div>
   </div>
 </div>
 

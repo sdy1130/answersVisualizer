@@ -29,7 +29,7 @@
                 <div> What legacy are you hoping to leave behind? </div>
                 <%= f.text_area :answer_2 %><br>
                 <div> How old are you? </div>
-                <%= f.select :age, (18..99) %>
+                <%= f.select :age, (12..99) %>
                 <div> Where are you from? </div>
                 <%= f.country_select :country_code, ([ "CA", "US" ]), iso_codes: true, id: :element_id, class:"col-lg-12 col-md-12 col-sm-12 col-12" %>
             </div>
