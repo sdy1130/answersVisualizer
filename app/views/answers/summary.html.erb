@@ -34,7 +34,7 @@
                 <p>
                   This is a wordcloud of everyone's response!
                 </p>
-                <img src=<%= image_url("red-arrow.png") %> alt=" style="float:left; width:20%"/>
+                <img src=<%= image_url("red-arrow.png") %> alt="" style="float:left; width:20%"/>
                 <div 
                   id="wordCloud_2"
                   style="width:600px; 
@@ -45,7 +45,7 @@
                 <h1>Other People's Answer!</h1>
                 <p>
                   <% @answers.each do |answer| %>
-                    <p> <%= answer.answer_1 %> </p>
+                    <p> <%= answer.answer_2 %> </p>
                     <h6><%= answer.age%> / <%= answer.country_name %></h6>
                     <% if user_signed_in? %>
                       <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
