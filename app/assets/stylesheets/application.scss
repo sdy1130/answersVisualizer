@@ -19,7 +19,7 @@
 	padding:0;
 }
 body{
-	background:#ccc url(/assets/wood.jpg) repeat top left;
+	background:#ccc image_url('wood.jpg') repeat top left;
 	font-family: Arial, Helvetica, sans-serif;
 	color:#444;
 	font-size:12px;
@@ -67,7 +67,7 @@ span.reference a:hover{
 	border-radius:10px;
 }
 .booklet .b-wrap-left  {
-	background:#fff url(/assets/left_bg.jpg) no-repeat top left;
+	background:#fff image_url('left_bg.jpg') no-repeat top left;
 	-webkit-border-top-left-radius: 10px;
 	-webkit-border-bottom-left-radius: 10px;
 	-moz-border-radius-topleft:10px;
@@ -76,7 +76,7 @@ span.reference a:hover{
 	border-bottom-left-radius: 10px;
 }
 .booklet .b-wrap-right {
-	background:#efefef url(/assets/right_bg.jpg) no-repeat top left;
+	background:#efefef image_url('right_bg.jpg') no-repeat top left;
 	-webkit-border-top-right-radius: 10px;
 	-webkit-border-bottom-right-radius: 10px;
 	-moz-border-radius-topright: 10px;
@@ -108,14 +108,14 @@ span.reference a:hover{
 	width:1400px;
 	height:850px;
 	position:relative;
-	background:transparent url(/assets/bg.png) no-repeat 9px 27px;
+	background:transparent image_url('bg.png') no-repeat 9px 27px;
 	background-size: cover;
 }
 .book_wrapper h1{
 	color:#13386a;
 	margin:5px 5px 5px 15px;
 	font-size:26px;
-	background:transparent url(/assets/h1.png) no-repeat bottom left;
+	background:transparent image_url('h1.png') no-repeat bottom left;
 	padding-bottom:7px;
 }
 .book_wrapper p{
@@ -124,7 +124,7 @@ span.reference a:hover{
 }
 .book_wrapper a.article,
 .book_wrapper .demo{
-	background:transparent url(/assets/circle.png) no-repeat 50% 0px;
+	background:transparent image_url('circle.png') no-repeat 50% 0px;
 	display:block;
 	width:95px;
 	height:41px;
@@ -164,7 +164,7 @@ a#prev_page_button{
 	cursor:pointer;
 	margin-top:-20px;
 	top:50%;
-	background:transparent url(/assets/buttons.png) no-repeat 0px -40px;
+	background:transparent image_url('buttons.png') no-repeat 0px -40px;
 }
 a#prev_page_button{
 	left:-30px;
@@ -190,7 +190,7 @@ a#prev_page_button:hover{
 	color:#fff;
 	padding-left:60px;
 	font-size:15px;
-	background: #000 url(/assets/ajax-loader.gif) no-repeat 10px 50%;
+	background: #000 image_url('ajax-loader.gif') no-repeat 10px 50%;
 	opacity: 0.7;
 	z-index:9999;
 	-moz-border-radius:20px;
