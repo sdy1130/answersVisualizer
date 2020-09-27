@@ -49,7 +49,7 @@ span.reference a:hover{
 
 .answer_text_field{
 	height: 100px;
-	width: 550px;
+	width: 450px;
 	margin-left: 25px;
 }
 
@@ -105,8 +105,8 @@ span.reference a:hover{
 	margin:0 auto;
 	padding-top:65px;
 	padding-left:10px;
-	width:1400px;
-	height:850px;
+	width:1200px;
+	height:700px;
 	position:relative;
 	background:transparent image_url('bg.png') no-repeat 9px 27px;
 	background-size: cover;
@@ -232,4 +232,42 @@ a#prev_page_button:hover{
 	  float: none;
 	  display: block;
 	}
+  }
+  
+  .card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+  }
+
+  .answer_box {
+	width: 200px;
+	height: 170px;
+	overflow: scroll;
+  }
+  
+  .price {
+	color: grey;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+  }
+ 
+  .card button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	background-color: white; 
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+  }
+  
+  .card button:hover {
+	opacity: 0.7;
   }

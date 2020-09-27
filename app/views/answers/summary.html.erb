@@ -13,21 +13,25 @@
                 <img src=<%= image_url("red-arrow.png") %> alt="" style="float:left; width:20%"/>
                 <div 
                   id="wordCloud_1"
-                  style="width:600px; 
-                  height:600px; 
+                  style="width:500px; 
+                  height:500px; 
                   background-position:center;"></div>
             </div>
-            <div>
+            <div style="overflow: scroll; height: 660px;">
                 <h1>Other People's Answer!</h1>
-                <p>
+                <div style="text-align: center;">
                   <% @answers.each do |answer| %>
-                    <p> <%= answer.answer_1 %> </p>
-                    <h6><%= answer.age%> / <%= answer.country_name %></h6>
-                    <% if user_signed_in? %>
-                      <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
-                    <% end %>
+                    <div class="card">
+                      <div class="answer_box"><p><%= answer.answer_1 %></p></div>
+                      <p class="price" style="font-size: 18px"><%= answer.age%> / <%= answer.country_name %></p>
+                      <% if user_signed_in? %>
+                        <p><button>
+                          <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
+                        </button></p>
+                      <% end %>
+                    </div>
                   <% end %>
-                </p>
+                </div>
             </div>
             <div>
                 <h1>2. What legacy are you hoping to leave behind?</h1>
@@ -37,38 +41,29 @@
                 <img src=<%= image_url("red-arrow.png") %> alt="" style="float:left; width:20%"/>
                 <div 
                   id="wordCloud_2"
-                  style="width:600px; 
-                  height:600px; 
+                  style="width:500px; 
+                  height:500px; 
                   background-position:center;"></div>
             </div>
-            <div>
+            <div style="overflow: scroll; height: 660px;">
                 <h1>Other People's Answer!</h1>
-                <p>
+                <div style="text-align: center;">
                   <% @answers.each do |answer| %>
-                    <p> <%= answer.answer_2 %> </p>
-                    <h6><%= answer.age%> / <%= answer.country_name %></h6>
-                    <% if user_signed_in? %>
-                      <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
-                    <% end %>
+                    <div class="card">
+                      <div class="answer_box"><p><%= answer.answer_2 %></p></div>
+                      <p class="price" style="font-size: 18px"><%= answer.age%> / <%= answer.country_name %></p>
+                      <% if user_signed_in? %>
+                        <p><button>
+                          <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
+                        </button></p>
+                      <% end %>
+                    </div>
                   <% end %>
-                </p>
+                </div>
             </div>
         </div>
     </div>
-    <div style="text-align: center; font-size: 48px;">
-      <%= will_paginate @answers %>
-    </div>
 </div>
-<%
-=begin%>
- <div>
-    <span class="reference">
-        <a href=" http://tympanus.net/codrops/2010/12/14/moleskine-notebook/">back to the Codrops tutorial</a>
-        <a href="http://builtbywill.com/code/booklet/" target="_blank">booklet jQuery Plugin</a>
-    </span>
-</div> 
-<%
-=end%>
 
 <!-- The JavaScript -->
 
@@ -84,8 +79,8 @@
    body: JSON.stringify({
      text: "<%= @all_answer_1 %>",
      scale: 1,
-     width: 1000,
-     height: 1000,
+     width: 800,
+     height: 800,
      colors: ["#375E97", "#FB6542", "#FFBB00", "#3F681C"],
      font: "Tahoma",
      use_stopwords: true,
@@ -117,8 +112,8 @@
    body: JSON.stringify({
      text: "<%= @all_answer_2 %>",
      scale: 1,
-     width: 1000,
-     height: 1000,
+     width: 800,
+     height: 800,
      colors: ["#375E97", "#FB6542", "#FFBB00", "#3F681C"],
      font: "Tahoma",
      use_stopwords: true,
@@ -161,8 +156,8 @@
                     $bttn_prev.show();
                     $mybook.show().booklet({
                         name:               null,                            // name of the booklet to display in the document title bar
-                        width:              1250,                             // container width
-                        height:             780,                             // container height
+                        width:              1080,                             // container width
+                        height:             665,                             // container height
                         speed:              600,                             // speed of the transition between pages
                         direction:          'LTR',                           // direction of the overall content organization, default LTR, left to right, can be RTL for languages which read right to left
                         startingPage:       0,                               // index of the first page to be displayed

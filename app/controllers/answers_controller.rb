@@ -15,7 +15,8 @@ class AnswersController < ApplicationController
   def summary
     @all_answer_1 = ""
     @all_answer_2 = ""
-    @answers = Answer.page(params[:page]).order("created_at DESC")
+    # @answers = Answer.page(params[:page]).order("created_at DESC")
+    @answers = Answer.all
     @all_answers = Answer.all
 
     @all_answers.each do |answer|
