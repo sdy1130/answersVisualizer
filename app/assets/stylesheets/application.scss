@@ -304,12 +304,12 @@ figcaption {
 	font-family: 'Ink Journal Regular';
 	font-style: normal;
 	font-weight: normal;
-	src: local('Ink Journal Regular'), url('INKJOURNAL.woff') format('woff');
+	src: local('Ink Journal Regular'), font_url('INKJOURNAL.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Noteworthy Light';
 	font-style: normal;
 	font-weight: normal;
-	src: local('Noteworthy Light'), url('Noteworthy-Lt.woff') format('woff');
+	src: local('Noteworthy Light'), font_url('Noteworthy-Lt.woff') format('woff');
 }
