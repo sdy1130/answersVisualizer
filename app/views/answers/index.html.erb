@@ -1,20 +1,21 @@
-<h1 class="title">End of Life 2020</h1>
+<h1 class="title">The End: A Hopeful Chapter of Life</h1>
 <div class="book_wrapper">
     <a id="next_page_button"></a>
     <a id="prev_page_button"></a>
     <div id="loading" class="loading">Loading pages...</div>
     <div id="mybook" style="display:none;">
         <div class="b-load">
-            <div>
-                <h1>At the End of My Life...</h1>
-                <img src=<%= image_url("tree.jpg") %> alt="" border="3px;" style="float:right; width:240px; height:360px;"/>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis a massa ac fermentum. Donec tincidunt ligula egestas, bibendum tortor eget, luctus urna. Integer porta maximus quam tristique lacinia. Fusce viverra, nisi in tristique convallis, purus nunc hendrerit ligula, et consectetur diam purus eget ex. Fusce libero tellus, imperdiet ac odio in, placerat imperdiet nisi. Donec ultricies varius odio, mollis malesuada eros. Curabitur elementum est vitae felis fringilla, non finibus leo molestie. Nulla facilisi.
-                </p>
-            </div>
-            <div>
-                <h1>Add your Answer!</h1>
-                <p>Contribute your answer to this book! Please keep in mind that you must answer both question for your answer to be submitted. Also checkout what other people has answer to the questions as well!</p>
+            <div class="div-wrapper">
+                <h1>Share your thoughts!</h1>
+                <p>1) Take a moment to reflect on the two questions on the right.</p>
+                <p>2) Type up your answers in the boxes provided (don’t worry, they will be anonymous).</p>
+                <p>3) Choose your age and location from the drop-down menu (we would love to see where everyone is from).</p>
+                <p>4) Hit the “Submit” button at the bottom (both answers must be written in order to be submitted).</p>
+                <p>5) After submitting, you will be taken to the next page where you can see what other people around the world have shared!</p>
+                <br>
+                <p>- Click “Results” button on the top to see the all responses.</p>
+                <p>- Click “About” button on the top to know more about this project.</p>
+                <img src=<%= image_url("people_discussion.jpeg") %> alt="" border="3px;" style="vertical-align: bottom"/>
             </div>
             <div>
                 <%= form_with scope: :answer, url: answers_path, :html => {:id=>'form_id'}, local: true do |f| %>
@@ -109,8 +110,8 @@
                 ++loaded;
                 if(loaded == cnt_assets){
                     $loading.hide();
-                    $bttn_next.show();
-                    $bttn_prev.show();
+                    // $bttn_next.show();
+                    // $bttn_prev.show();
                     $mybook.show().booklet({
                         name:               null,                            // name of the booklet to display in the document title bar
                         width:              1080,                             // container width
@@ -122,7 +123,7 @@
                         easeIn:             'easeInQuad',                    // easing method for first half of transition
                         easeOut:            'easeOutQuad',                   // easing method for second half of transition
 
-                        closed:             true,                           // start with the book "closed", will add empty pages to beginning and end of book
+                        closed:             false,                           // start with the book "closed", will add empty pages to beginning and end of book
                         closedFrontTitle:   null,                            // used with "closed", "menu" and "pageSelector", determines title of blank starting page
                         closedFrontChapter: null,                            // used with "closed", "menu" and "chapterSelector", determines chapter name of blank starting page
                         closedBackTitle:    null,                            // used with "closed", "menu" and "pageSelector", determines chapter name of blank ending page
@@ -141,7 +142,7 @@
                         cursor:             'pointer',                       // cursor css setting for side bar areas
 
                         hash:               false,                           // enables navigation using a hash string, ex: #/page/1 for page 1, will affect all booklets with 'hash' enabled
-                        keyboard:           true,                            // enables navigation with arrow keys (left: previous, right: next)
+                        keyboard:           false,                            // enables navigation with arrow keys (left: previous, right: next)
                         next:               $bttn_next,          			// selector for element to use as click trigger for next page
                         prev:               $bttn_prev,          			// selector for element to use as click trigger for previous page
 

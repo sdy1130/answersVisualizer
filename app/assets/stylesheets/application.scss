@@ -114,12 +114,14 @@ span.reference a:hover{
 .book_wrapper h1{
 	color:#13386a;
 	margin:5px 5px 5px 15px;
-	font-size:26px;
+	font-family: 'Noteworthy Light';
+	font-size:22px;
 	background:transparent image_url('h1.png') no-repeat bottom left;
 	padding-bottom:7px;
 }
 .book_wrapper p{
-	font-size:24px;
+	font-size:20px;
+	font-family: 'Noteworthy Light';	
 	margin:5px 5px 5px 15px;
 }
 .book_wrapper a.article,
@@ -130,7 +132,7 @@ span.reference a:hover{
 	height:41px;
 	text-decoration:none;
 	outline:none;
-	font-size:42px;
+	font-size:24px;
 	color:#555;
 	float:left;
 	line-height:41px;
@@ -235,6 +237,7 @@ a#prev_page_button:hover{
   }
   
   .card {
+	background-color: white;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	width: 200px;
 	height: 200px;
@@ -271,3 +274,42 @@ a#prev_page_button:hover{
   .card button:hover {
 	opacity: 0.7;
   }
+
+.div-wrapper {
+	position: relative;
+	height: 640px;
+}
+
+.div-wrapper img {
+	position: absolute;
+	width:230px;
+    left: 140px;
+    bottom: 0;
+}
+
+
+figure{
+	float: left;
+	width: 50%;
+}
+
+figcaption {
+	background-color: black;
+	color: white;
+	padding: 2px;
+	text-align: center;
+}
+
+@font-face {
+	font-family: 'Ink Journal Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Ink Journal Regular'), url('INKJOURNAL.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Noteworthy Light';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Noteworthy Light'), url('Noteworthy-Lt.woff') format('woff');
+}

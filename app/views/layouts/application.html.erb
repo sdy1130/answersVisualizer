@@ -10,13 +10,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'jquery.booklet.1.1.0.css', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-
 	  <script type="text/javascript">
 		  Cufon.replace('h1,p,.b-counter');
 		  Cufon.replace('.book_wrapper a', {hover:true});
-		  Cufon.replace('.title', {textShadow: '1px 1px #C59471', fontFamily:'ChunkFive'});
-		  Cufon.replace('.reference a', {textShadow: '1px 1px #C59471', fontFamily:'ChunkFive'});
-		  Cufon.replace('.loading', {textShadow: '1px 1px #000', fontFamily:'ChunkFive'});
+		  // Cufon.replace('.title', {textShadow: '1px 1px #C59471', fontFamily:'Ink Journal Regular'});
+		  // Cufon.replace('.reference a', {textShadow: '1px 1px #C59471', fontFamily:'Ink Journal Regular'});
+		  // Cufon.replace('.loading', {textShadow: '1px 1px #000', fontFamily:'Ink Journal Regular'});
 	  </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,14 +31,13 @@
 
     <div class="navbar">
       <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
-      <a href="/answers/summary"><i class="fa fa-fw fa-search"></i> Summary</a>
-      <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+      <a href="/answers/about"><i class="fa fa-fw fa-user"></i> About</a>
+      <a href="/answers/summary"><i class="fa fa-fw fa-search"></i> Results</a>
+      <a href="mailto:cyang1130@gmail.com"><i class="fa fa-fw fa-envelope"></i> Contact Us</a>
 
       <% if user_signed_in? %>
         <a href="/users/edit"><i class="fa fa-fw fa-user"></i> Edit</a>
         <a href="/users/sign_out" data-method="delete"><i class="fa fa-fw fa-user"></i> Sign Out</a>
-      <% else %>
-        <a href="/users/sign_in"><i class="fa fa-fw fa-user"></i> Admin</a>
       <% end %>
     </div>
     <%= yield %>

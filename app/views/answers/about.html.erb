@@ -6,132 +6,84 @@
     <div id="mybook" style="display:none;">
         <div class="b-load">
             <div>
-                <h1>1. What are your fears about end-of-life?</h1>
-                <p>
-                  This is a wordcloud of everyone's response!
-                </p>
-                <img src=<%= image_url("red-arrow.png") %> alt="" style="float:left; width:20%"/>
-                <div 
-                  id="wordCloud_1"
-                  style="width:500px; 
-                  height:500px; 
-                  background-position:center;"></div>
+               <h1>Our Project</h1>
+               <p>
+                Death continues to be a taboo subject within the general public and 
+                many may feel uneasy while engaging in conversations with their loved ones 
+                about this topic. The need for discussions around end-of-care life is a vital 
+                aspect in fulfilling patients’ wishes for the management of health towards 
+                the later stages of life.
+               </p>
+               <br>
+               <p>
+                This project aims to raise awareness about the importance of advance care 
+                planning and to normalize conversations around end-of-life care. We hope 
+                that the collated responses to these questions will promote self-reflection 
+                on one’s health care wishes and allow others to have a greater insight on 
+                this topic. 
+               </p>
+               <br>
+               <p>
+                The next step of this project includes an analysis of the collected, 
+                anonymized responses and the creation of a summary report highlighting 
+                key trends, patterns, and findings. 
+               </p>
             </div>
-            <div style="overflow: scroll; height: 660px;">
-                <h1>All Answers!</h1>
-                <div style="text-align: center;">
-                  <% @answers.each do |answer| %>
-                    <div class="card">
-                      <div class="answer_box"><p><%= answer.answer_1 %></p></div>
-                      <p class="price" style="font-size: 18px"><%= answer.age%> / <%= answer.country_name %></p>
-                      <% if user_signed_in? %>
-                        <p><button>
-                          <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
-                        </button></p>
-                      <% end %>
-                    </div>
-                  <% end %>
+            <div style="width: 100%; height: 95%; overflow: scroll;">
+                <h1>Who are we?</h1>
+                <p><b>Co-founders:</b> Rachel Tandun & Jamie Park</p>
+                <p><b>Engineering Lead:</b> Charlie Yang</p>
+                <div>
+                    <figure>
+                    <img src=<%= image_url("rachel_test.png") %> alt="Rachel" style="width:100%">
+                    <figcaption><p>Rachel</p></figcaption>
+                    </figure>
+                    <figure>
+                    <img src=<%= image_url("jamie_test.png") %> alt="Jamie" style="width:100%">
+                    <figcaption><p>Jamie</p></figcaption>
+                    </figure>
                 </div>
+                <p>
+                  During their pharmacy school clinical rotations, 
+                  Rachel and Jamie have come to realize how the neglect 
+                  and absence of advance care planning has compromised the 
+                  quality of care patients receive, leading to much uncertainty,
+                  confusion, and regret among family members and loved ones. This
+                  led to the birth of this project - The End: A Hopeful
+                  Chapter of Life. 
+                </p>
+                <br>
+                <p>
+                  Rachel and Jamie hope to empower the general public with taking 
+                  charge of their healthcare management, engaging in conversations,
+                  and dispelling any fears that are often associated with end-of-life care.
+                  Through this online avenue, helpful resources can also be shared to a 
+                  wider audience of varying ages, cultures, and geographical location. 
+                </p>
+                <br>
             </div>
             <div>
-                <h1>2. What legacy are you hoping to leave behind?</h1>
-                <p>
-                  This is a wordcloud of everyone's response!
-                </p>
-                <img src=<%= image_url("red-arrow.png") %> alt="" style="float:left; width:20%"/>
-                <div 
-                  id="wordCloud_2"
-                  style="width:500px; 
-                  height:500px; 
-                  background-position:center;"></div>
+               <h1>Acknowledgement</h1>
+               <p>This project is funded by the 2019 UBC Connect to Community Grant. </p>
             </div>
-            <div style="overflow: scroll; height: 660px;">
-                <h1>All Answers!</h1>
-                <div style="text-align: center;">
-                  <% @answers.each do |answer| %>
-                    <div class="card">
-                      <div class="answer_box"><p><%= answer.answer_2 %></p></div>
-                      <p class="price" style="font-size: 18px"><%= answer.age%> / <%= answer.country_name %></p>
-                      <% if user_signed_in? %>
-                        <p><button>
-                          <%= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
-                        </button></p>
-                      <% end %>
-                    </div>
-                  <% end %>
-                </div>
+            <div>
+                <h1>Resources</h1>
+                <p>
+                <ul style="padding-left: 35px; font-size: 16px">
+                    <li><a href="https://www.health.gov.bc.ca/library/publications/year/2013/MyVoice-AdvanceCarePlanningGuide.pdf">Advance Care Planning (ACP) Workbook</a></li>
+                    <li><a href="http://bc-cpc.ca/cpc/all-resources/hcp-resources/resources/#field_17_36">Advance Care Planning (ACP) Conversation Starters</a></li>
+                    <li><a href="https://bc-cpc.ca/cpc/all-resources/individuals/acp-resources/about-acp">BC Centre for Palliative Care Advance Care Planning (ACP) Resources</a></li>
+                    <li><a href="https://www2.gov.bc.ca/gov/content/family-social-supports/seniors/health-safety/advance-care-planning">BC Ministry of Health on Advance Care Planning (ACP)</a></li>
+                    <li><a href="https://www.healthlinkbc.ca/health-topics/aa114595#aa114652">HealthLink BC on Advance Care Planning (ACP)</a></li>
+                    <li><a href="https://www.advancecareplanning.ca">Speakup Canada Advance Care Planning (ACP)</a></li>
+                </ul>
+                </p>
             </div>
         </div>
     </div>
 </div>
 
 <!-- The JavaScript -->
-
-<script>
- fetch("https://textvis-word-cloud-v1.p.rapidapi.com/v1/textToCloud", {
-   method: "POST",
-   headers: {
-     "x-rapidapi-host": "textvis-word-cloud-v1.p.rapidapi.com",
-     "x-rapidapi-key": "88e342cc0bmsh3054f62a586d151p132d3fjsn51ec7f3448ac",
-     "content-type": "application/json",
-     accept: "application/json"
-   },
-   body: JSON.stringify({
-     text: "<%= @all_answer_1 %>",
-     scale: 1,
-     width: 800,
-     height: 800,
-     colors: ["#375E97", "#FB6542", "#FFBB00", "#3F681C"],
-     font: "Tahoma",
-     use_stopwords: true,
-     language: "en",
-     uppercase: false
-   })
- })
-   .then(response => {
-     return response.text();
-   })
-   .then(wordCloud => {
-     var img = document.getElementById("wordCloud_1");
-     img.style.backgroundImage = "url(" + wordCloud + ")";
-   })
-   .catch(err => {
-     console.log(err);
-   });
-</script>
-
-<script>
- fetch("https://textvis-word-cloud-v1.p.rapidapi.com/v1/textToCloud", {
-   method: "POST",
-   headers: {
-     "x-rapidapi-host": "textvis-word-cloud-v1.p.rapidapi.com",
-     "x-rapidapi-key": "88e342cc0bmsh3054f62a586d151p132d3fjsn51ec7f3448ac",
-     "content-type": "application/json",
-     accept: "application/json"
-   },
-   body: JSON.stringify({
-     text: "<%= @all_answer_2 %>",
-     scale: 1,
-     width: 800,
-     height: 800,
-     colors: ["#375E97", "#FB6542", "#FFBB00", "#3F681C"],
-     font: "Tahoma",
-     use_stopwords: true,
-     language: "en",
-     uppercase: false
-   })
- })
-   .then(response => {
-     return response.text();
-   })
-   .then(wordCloud => {
-     var img = document.getElementById("wordCloud_2");
-     img.style.backgroundImage = "url(" + wordCloud + ")";
-   })
-   .catch(err => {
-     console.log(err);
-   });
-</script>
 
 <script type="text/javascript">
     $(function() {
@@ -207,4 +159,3 @@
 				
     });
 </script>
-
