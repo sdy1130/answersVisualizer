@@ -1,9 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title>AnswersVisualizer</title>
+    <title>A Hopeful Chapter of Life</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
   	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -33,7 +35,7 @@
       <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
       <a href="/answers/about"><i class="fa fa-fw fa-user"></i> About</a>
       <a href="/answers/summary"><i class="fa fa-fw fa-search"></i> Results</a>
-      <a href="mailto:cyang1130@gmail.com"><i class="fa fa-fw fa-envelope"></i> Contact Us</a>
+      <a href="mailto:hopefulchapteroflife@gmail.com"><i class="fa fa-fw fa-envelope"></i> Contact Us</a>
 
       <% if user_signed_in? %>
         <a href="/users/edit"><i class="fa fa-fw fa-user"></i> Edit</a>

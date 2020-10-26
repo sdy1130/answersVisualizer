@@ -8,14 +8,21 @@
             <div class="div-wrapper">
                 <h1>Share your thoughts!</h1>
                 <p>1) Take a moment to reflect on the two questions on the right.</p>
-                <p>2) Type up your answers in the boxes provided (don’t worry, they will be anonymous).</p>
-                <p>3) Choose your age and location from the drop-down menu (we would love to see where everyone is from).</p>
+                <p>2) Type up your answers in the boxes provided.</p>
+                <p>3) Choose your age and location from the drop-down menu.</p>
                 <p>4) Hit the “Submit” button at the bottom (both answers must be written in order to be submitted).</p>
-                <p>5) After submitting, you will be taken to the next page where you can see what other people around the world have shared!</p>
+                <p>5) You will be taken to the next page where you can see what other people around the world have shared!</p>
                 <br>
-                <p>- Click “Results” button on the top to see the all responses.</p>
-                <p>- Click “About” button on the top to know more about this project.</p>
-                <img src=<%= image_url("people_discussion.jpg") %> alt="" border="3px;" style="vertical-align: bottom"/>
+                <p>- Click “<a href="/answers/summary">Results</a>” button on the top to see all the responses.</p>
+                <p>- Click “<a href="/answers/about">About</a>” button on the top to know more about this project.</p>
+                <br>
+
+                <div style="text-align:center;">
+                    <a href="https://www.facebook.com/hopefulchapteroflife" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/hopefulchapteroflife" class="fa fa-instagram"></a>
+                </div>
+
+                <img src=<%= image_url("people_discussion.png") %> alt="" border="0px;" style="vertical-align: bottom"/>
             </div>
             <div>
                 <%= form_with scope: :answer, url: answers_path, :html => {:id=>'form_id'}, local: true do |f| %>

@@ -26,6 +26,7 @@ body{
 	color: #000;
 }
 h1{
+	font-family: 'Noteworthy Light';
 	color:#2F1B0C;
 	font-size:40px;
 	margin:20px 0px 0px 20px;
@@ -307,6 +308,31 @@ figcaption {
 	padding: 2px;
 	text-align: center;
 }
+
+.book_wrapper .fa {
+	padding: 20px;
+	font-size: 30px;
+	width: 30px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
+}
+  
+.book_wrapper .fa:hover {
+	opacity: 0.7;
+}
+
+.book_wrapper .fa-facebook {
+	background: #3B5998;
+	color: white;
+}
+
+.book_wrapper .fa-instagram {
+	background: #dd4b39;
+	color: white;
+}
+
 
 @font-face {
 	font-family: 'Ink Journal Regular';
