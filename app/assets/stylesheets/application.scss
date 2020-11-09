@@ -345,5 +345,11 @@ figcaption {
 	font-family: 'Noteworthy Light';
 	font-style: normal;
 	font-weight: normal;
-	src: local('Noteworthy Light'), font_url('Noteworthy-Lt.woff') format('woff');
+	src: font_url('Noteworthy-Lt.woff') format('woff'),
+	font_url('Noteworthy-Lt.woff2') format('woff2'),
+	font_url('Noteworthy-Lt.otf') format('otf'),
+	font_url('Noteworthy-Lt.eot') format('eot'),
+	font_url('Noteworthy-Lt.svg') format('svg'),
+	font_url('Noteworthy-Lt.ttf') format('tff');
+	;
 }
