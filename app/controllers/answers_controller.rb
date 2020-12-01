@@ -23,6 +23,8 @@ class AnswersController < ApplicationController
       @all_answer_1 += answer.answer_1 + " "
       @all_answer_2 += answer.answer_2 + " "
     end
+    @all_answer_1 = @all_answer_1.gsub(/\r?\n/, ' ')
+    @all_answer_2 = @all_answer_2.gsub(/\r?\n/, ' ')
   end
 
   def about
