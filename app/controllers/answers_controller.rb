@@ -25,6 +25,8 @@ class AnswersController < ApplicationController
     end
     @all_answer_1 = @all_answer_1.gsub(/\r?\n/, ' ')
     @all_answer_2 = @all_answer_2.gsub(/\r?\n/, ' ')
+    @all_answer_1 = @all_answer_1.gsub(/[^A-Za-z0-9]+/, ' ')
+    @all_answer_2 = @all_answer_2.gsub(/[^A-Za-z0-9]+/, ' ')
   end
 
   def about
